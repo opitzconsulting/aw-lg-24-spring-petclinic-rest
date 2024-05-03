@@ -1,4 +1,4 @@
-# REST version of Spring PetClinic Sample Application (spring-framework-petclinic extend ) 
+# REST version of Spring PetClinic Sample Application (spring-framework-petclinic extend )
 
 [![Java Build Status](https://github.com/spring-petclinic/spring-petclinic-rest/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-petclinic/spring-petclinic-rest/actions/workflows/maven-build.yml)
 [![Docker Build Status](https://github.com/spring-petclinic/spring-petclinic-rest/actions/workflows/docker-build.yml/badge.svg)](https://github.com/spring-petclinic/spring-petclinic-rest/actions/workflows/docker-build.yml)
@@ -30,7 +30,7 @@ docker run -p 9966:9966 springcommunity/spring-petclinic-rest
 
 You can then access petclinic here: [http://localhost:9966/petclinic/](http://localhost:9966/petclinic/)
 
-There are actuator health check and info routes as well: 
+There are actuator health check and info routes as well:
 * [http://localhost:9966/petclinic/actuator/health](http://localhost:9966/petclinic/actuator/health)
 * [http://localhost:9966/petclinic/actuator/info](http://localhost:9966/petclinic/actuator/info)
 
@@ -67,12 +67,12 @@ Before do this, would be good to check properties defined in application-mysql.p
 ```
 spring.datasource.url = jdbc:mysql://localhost:3306/petclinic?useUnicode=true
 spring.datasource.username=pc
-spring.datasource.password=petclinic 
-spring.datasource.driver-class-name=com.mysql.jdbc.Driver 
+spring.datasource.password=petclinic
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database=MYSQL
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 spring.jpa.hibernate.ddl-auto=none
-```      
+```
 
 You may also start a MySql database with docker:
 
@@ -109,12 +109,12 @@ This API is built following some [API First approach principles](https://swagger
 It is specified through the [OpenAPI](https://oai.github.io/Documentation/).
 It is specified in this [file](./src/main/resources/openapi.yml).
 
-Some of the required classes are generated during the build time. 
+Some of the required classes are generated during the build time.
 Here are the generated file types:
 * DTOs
 * API template interfaces specifying methods to override in the controllers
 
-To see how to get them generated you can read the next chapter. 
+To see how to get them generated you can read the next chapter.
 
 ## Generated code
 
@@ -146,7 +146,7 @@ petclinic.security.enable=true
 ```
 This will secure all APIs and in order to access them, basic authentication is required.
 Apart from authentication, APIs also require authorization. This is done via roles that a user can have.
-The existing roles are listed below with the corresponding permissions 
+The existing roles are listed below with the corresponding permissions
 * OWNER_ADMIN -> OwnerController, PetController, PetTypeController (getAllPetTypes and getPetType), VisitController
 * VET_ADMIN   -> PetTypeController, SpecialityController, VetController
 * ADMIN       -> UserController
@@ -218,7 +218,7 @@ mvn compile jib:build -X -DjibSerialize=true -Djib.to.auth.username=xxx -Djib.to
 The Spring Petclinic master branch in the main [spring-projects](https://github.com/spring-projects/spring-petclinic)
 GitHub org is the "canonical" implementation, currently based on Spring Boot and Thymeleaf.
 
-This [spring-petclinic-rest](https://github.com/spring-petclinic/spring-petclinic-rest/) project is one of the [several forks](https://spring-petclinic.github.io/docs/forks.html) 
+This [spring-petclinic-rest](https://github.com/spring-petclinic/spring-petclinic-rest/) project is one of the [several forks](https://spring-petclinic.github.io/docs/forks.html)
 hosted in a special GitHub org: [spring-petclinic](https://github.com/spring-petclinic).
 If you have a special interest in a different technology stack
 that could be used to implement the Pet Clinic then please join the community there.
@@ -229,7 +229,3 @@ that could be used to implement the Pet Clinic then please join the community th
 The [issue tracker](https://github.com/spring-petclinic/spring-petclinic-rest/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
 
 For pull requests, editor preferences are available in the [editor config](https://github.com/spring-petclinic/spring-petclinic-rest/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
-
-
-
-
